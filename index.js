@@ -8,6 +8,8 @@ const app = express();
 // Create an HTTP server
 const server = http.createServer(app);
 
+app.use(cors({ origin: "*" })); // Allow all origins
+
 // Start the server
 const PORT = 3000;
 server.listen(PORT, () => {
@@ -17,7 +19,7 @@ server.listen(PORT, () => {
 // Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: "*", // Adjust the origin as needed for your frontend
+    origin: "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app/", // Adjust the origin as needed for your frontend
     methods: ["GET", "POST"],
   },
 });
