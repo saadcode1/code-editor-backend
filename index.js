@@ -17,13 +17,13 @@ server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app/", // Adjust the origin as needed for your frontend
+    origin: "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app",
     methods: ["GET", "POST"],
   },
 });
+
 
 const rooms = new Map();
 
