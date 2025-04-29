@@ -6,7 +6,7 @@ import cors from "cors";
 
 const app = express();
 app.use(cors({
-  origin: ["http://localhost:3000", "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app"], // adjust to match your actual frontend
+  origin: ["http://localhost:3000", "https://benevolent-tartufo-7b8412.netlify.app"], // adjust to match your actual frontend
   methods: ["GET", "POST"],
 }));
 
