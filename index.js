@@ -23,7 +23,7 @@ server.listen(PORT, () => {
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000", "https://benevolent-tartufo-7b8412.netlify.app/"],
+    origin: ["http://localhost:3000", "https://benevolent-tartufo-7b8412.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
