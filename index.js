@@ -19,7 +19,7 @@ server.listen(PORT, () => {
 
 const io = new Server(server, {
   cors: {
-    origin: "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
