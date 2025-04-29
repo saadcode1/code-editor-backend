@@ -3,23 +3,27 @@ import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
 
-// Create an instance of Express
-const app = express();
 
-// Create an HTTP server
+const app = express();
+app.use(cors({
+  origin: ["http://localhost:3000", "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app"], // adjust to match your actual frontend
+  methods: ["GET", "POST"],
+}));
+
+app.get("/", (req, res) => {
+  res.send("Socket.IO server running");
+});
+
 const server = http.createServer(app);
 
-app.use(cors({ origin: "*" })); // Allow all origins
-
-// Start the server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: ["http://localhost:3000", "https://679e4ea957f70ea95e78133a--benevolent-tartufo-7b8412.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
